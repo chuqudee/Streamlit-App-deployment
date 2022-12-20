@@ -1,0 +1,11 @@
+streamlit
+pandas
+folium
+streamlit_folium
+streamlit_option_menu
+plotly.express
+cufflinks
+seaborn
+tensorflow
+opencv
+pillow
