@@ -7,5 +7,5 @@ plotly.express
 cufflinks
 seaborn
 tensorflow
-opencv-python
+opencv-python-headless
 Pillow
