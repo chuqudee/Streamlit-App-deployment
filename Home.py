@@ -126,7 +126,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Uploaded file', use_column_width=True)
     st.write("")
-    label,perc = classifying(image, 'disaster_model.h5')
+    label,perc = classifying(image, 'https://drive.google.com/file/d/1OFTZwwpO73SyxtdGSwfhhOJKJWlSYwWs/view?usp=share_link')
     if label == 1:
         st.write('This is a disaster image!')
     else:
