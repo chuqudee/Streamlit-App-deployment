@@ -17,7 +17,7 @@ from tensorflow.keras.models import Sequential
 # st.title("Disaster & Non-Disaster Image Classification")
 # st.header("Please input an image to be classified:")
 # st.text("Created by Omdena South-Africa Team")
-st.set_page_config(page_title='About', layout='wide')
+st.set_page_config(page_title='Omdena South Africa Chapter', layout='wide')
 
 
 @st.cache(allow_output_mutation=True)
@@ -114,11 +114,14 @@ st.markdown(
         width: 2rem;
         height: 2rem;
         }
+        .css-11wiv6u {
+        background-color: #f1dfc9;
+        }
         </style>
         """, unsafe_allow_html=True
     )
 
-st.image("""omdena.png""")
+st.image("assets/logo-long.png")
 st.title("Disaster & Non-Disaster Image Classification")
 st.header("Please input an image to be classified:")
 st.text("Created by Omdena South-Africa Team")

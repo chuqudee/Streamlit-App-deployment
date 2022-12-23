@@ -1,6 +1,11 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(page_title='Dashboard', layout='wide')
+
+def load_map(url):
+    html_string = open(url)
+    return html_string
 
 st.markdown(
         """
@@ -77,7 +82,7 @@ st.markdown(
     )
 
 st.image("assets/logo-long.png")
-st.title("Dashboard")
+st.title("Crime Counts by Police Station Boundary")
 st.text("Created by Omdena South-Africa Team")
 
-st.markdown('<iframe title="OMDENA_SOUTH-AFRICA_URBAN_VULNERABILITY_ANALYSIS (1) - Statistics" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiZDVhMmFjZjktZjhmNi00ODJkLTgyMjctZGEwYzI0ZjFlN2JmIiwidCI6IjAzYjFkMmRiLTkzNDUtNDk1MS1hNWNhLTE1M2VmNjFjZjg4MiJ9" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html=True)
+components.html(load_map('assets/SA_Yearly_Crime_by_Station.html').read(), height=1000)
