@@ -1,0 +1,9 @@
+#feeb46 - Yellow
+
+#f1b61a - Gold
+
+#8f6a95 - Light
+
+#4e2c76 - Mid
+
+#170243 - Full

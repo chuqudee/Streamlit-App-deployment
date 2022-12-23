@@ -18,32 +18,31 @@ from tensorflow.keras.models import Sequential
 # st.header("Please input an image to be classified:")
 # st.text("Created by Omdena South-Africa Team")
 st.set_page_config(page_title='About', layout='wide')
+
+
 @st.cache(allow_output_mutation=True)
+
 
 def classifying(img, weights_file):
     # Load the model
     model = keras.models.load_model(weights_file)
-
     # Create the array of the right shape to feed into the keras model
     data = np.ndarray(shape=(1, 200, 200, 3), dtype=np.float32)
     image = img
-    #image sizing
+    # image sizing
     size = (200, 200)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
-
-    #turn the image into a numpy array
+    # turn the image into a numpy array
     image_array = np.asarray(image)
     # Normalize the image
     normalized_image_array = (image_array.astype(np.float32) / 255)
-
     # Load the image into the array
     data[0] = normalized_image_array
-
     # run the inference
     prediction_percentage = model.predict(data)
-    prediction=prediction_percentage.round()
+    prediction = prediction_percentage.round()
+    return prediction, prediction_percentage
 
-    return  prediction,prediction_percentage
 
 st.markdown(
         """
@@ -53,6 +52,9 @@ st.markdown(
         }
         header.css-vg37xl.e8zbici2 {
         background: none;
+        }
+        .css-1mr91h5 {
+            background-color: transparent;
         }
         span.css-10trblm.e16nr0p30 {
         text-align: center;
@@ -85,7 +87,7 @@ st.markdown(
         font-size: 1.1em;
         font-weight: bold;
         font-variant-caps: small-caps;
-        border-bottom: 3px solid #4abd82;
+        border-bottom: 3px solid #F8BE37;
         }
         .css-12w0qpk.e1tzin5v2 {
         background: #d2d2d2;
